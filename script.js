@@ -34,7 +34,8 @@ const CHUNK = 3;
 /* Hilfsfunktion: Übergang (fade) sauber auslösen */
 function applyFade(container) {
   container.classList.remove("fade-in");
-  void container.offsetWidth; // reflow for restart
+  // force reflow to allow re-adding the class
+  void container.offsetWidth;
   container.classList.add("fade-in");
 }
 
@@ -49,7 +50,7 @@ function renderTeam() {
     teamList.appendChild(li);
   });
 
-  // Platzhalter auffüllen, damit Höhe konstant bleibt
+  // Platzhalter auffüllen, damit Boxhöhe konstant bleibt
   for (let i = chunk.length; i < CHUNK; i++) {
     const li = document.createElement("li");
     li.innerHTML = `<span class="role">&nbsp;</span><span class="name">&nbsp;</span>`;
@@ -91,19 +92,3 @@ renderRules();
 
 setInterval(renderTeam, 4500);  // Team wechselt alle 4.5s
 setInterval(renderRules, 5200); // Regeln wechseln alle 5.2s
-
-
-/* -------------------------
-   Externe Links (Discord, Shop usw.)
-   ------------------------- */
-function externalLink(url) {
-  if (url && url !== "") {
-    // Wenn in Garry's Mod geöffnet → leite per Lua-NetMessage
-    if (typeof gmod !== "undefined" && gmod !== null) {
-      gmod.openExternal(url);
-    } else {
-      // Fallback: normal im Browser öffnen
-      window.open(url, "_blank");
-    }
-  }
-}
