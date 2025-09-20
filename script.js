@@ -1,4 +1,3 @@
-<script>
 /* -------------------------
    Team + Regeln Rotation
    ------------------------- */
@@ -35,7 +34,7 @@ const CHUNK = 3;
 /* Hilfsfunktion: Übergang (fade) sauber auslösen */
 function applyFade(container) {
   container.classList.remove("fade-in");
-  void container.offsetWidth; // reflow
+  void container.offsetWidth; // reflow for restart
   container.classList.add("fade-in");
 }
 
@@ -50,6 +49,7 @@ function renderTeam() {
     teamList.appendChild(li);
   });
 
+  // Platzhalter auffüllen, damit Höhe konstant bleibt
   for (let i = chunk.length; i < CHUNK; i++) {
     const li = document.createElement("li");
     li.innerHTML = `<span class="role">&nbsp;</span><span class="name">&nbsp;</span>`;
@@ -88,19 +88,22 @@ function renderRules() {
 /* Initial Render + Intervalle */
 renderTeam();
 renderRules();
-setInterval(renderTeam, 4500);
-setInterval(renderRules, 5200);
+
+setInterval(renderTeam, 4500);  // Team wechselt alle 4.5s
+setInterval(renderRules, 5200); // Regeln wechseln alle 5.2s
+
 
 /* -------------------------
-   Externe Links öffnen
+   Externe Links (Discord, Shop usw.)
    ------------------------- */
 function externalLink(url) {
   if (url && url !== "") {
+    // Wenn in Garry's Mod geöffnet → leite per Lua-NetMessage
     if (typeof gmod !== "undefined" && gmod !== null) {
       gmod.openExternal(url);
     } else {
-      window.open(url, "_blank"); // Fallback normaler Browser
+      // Fallback: normal im Browser öffnen
+      window.open(url, "_blank");
     }
   }
 }
-</script>
