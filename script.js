@@ -1,3 +1,4 @@
+<script>
 /* -------------------------
    Team + Regeln Rotation
    ------------------------- */
@@ -34,8 +35,7 @@ const CHUNK = 3;
 /* Hilfsfunktion: Übergang (fade) sauber auslösen */
 function applyFade(container) {
   container.classList.remove("fade-in");
-  // force reflow to allow re-adding the class
-  void container.offsetWidth;
+  void container.offsetWidth; // reflow
   container.classList.add("fade-in");
 }
 
@@ -50,7 +50,6 @@ function renderTeam() {
     teamList.appendChild(li);
   });
 
-  // Platzhalter auffüllen, damit Boxhöhe konstant bleibt
   for (let i = chunk.length; i < CHUNK; i++) {
     const li = document.createElement("li");
     li.innerHTML = `<span class="role">&nbsp;</span><span class="name">&nbsp;</span>`;
@@ -89,6 +88,19 @@ function renderRules() {
 /* Initial Render + Intervalle */
 renderTeam();
 renderRules();
+setInterval(renderTeam, 4500);
+setInterval(renderRules, 5200);
 
-setInterval(renderTeam, 4500);  // Team wechselt alle 4.5s
-setInterval(renderRules, 5200); // Regeln wechseln alle 5.2s
+/* -------------------------
+   Externe Links öffnen
+   ------------------------- */
+function externalLink(url) {
+  if (url && url !== "") {
+    if (typeof gmod !== "undefined" && gmod !== null) {
+      gmod.openExternal(url);
+    } else {
+      window.open(url, "_blank"); // Fallback normaler Browser
+    }
+  }
+}
+</script>
