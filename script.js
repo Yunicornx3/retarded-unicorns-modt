@@ -6,9 +6,9 @@
 const teamMembers = [
   { role: "Owner", name: "[R.U]Yu" },
   { role: "Head Admin", name: "[R.U]Kariko" },
-  { role: "Admin", name: "[R.U]Unkown" },
-  { role: "Moderator", name: "[R.U]Test" },
-  { role: "Supporter", name: "[R.U]Test" }
+  { role: "Admin", name: "[R.U]Unkown" }
+  //{ role: "Moderator", name: "[R.U]Test" },
+  //{ role: "Supporter", name: "[R.U]Test" }
 ];
 
 const rules = [
