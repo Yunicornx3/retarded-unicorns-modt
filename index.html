@@ -2,103 +2,100 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Retarded Unicorns - MOTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOTD</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="motd-container">
-    <!-- Erste Reihe -->
-    <div class="motd-box">
-      <h2>👑 Team</h2>
-      <ul id="team-list" class="team-list"></ul>
-    </div>
-    <div class="motd-box">
-      <h2>📰 News</h2>
-      <p>- Neue Map Rotation<br>- Sommer Event bald live</p>
-    </div>
-    <div class="motd-box">
-      <h2>🎉 Events</h2>
-      <p>- Halloween Special<br>- Double XP Weekend</p>
-    </div>
+  <!-- Hintergrund -->
+  <div class="background"></div>
+  <div class="overlay"></div>
 
-    <!-- Zweite Reihe -->
-    <div class="motd-box">
-      <h2>📜 Regeln</h2>
-      <ol class="rules-list">
-        <li>Kein RDM</li>
-        <li>Kein Ghosting</li>
-        <li>Respektvoller Umgang</li>
-        <li>Keine Beleidigungen</li>
-        <li>Keine Bugs ausnutzen</li>
-      </ol>
-    </div>
-    <div class="motd-box">
-      <h2>ℹ️ Informationen</h2>
-      <p>- Discord: discord.gg/xyz<br>- Forum: forum.retarded-unicorns.de</p>
-    </div>
-    <div class="motd-box">
-      <h2>🆕 Updates</h2>
-      <p>- Neue Waffen hinzugefügt<br>- Performance Fixes</p>
-    </div>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
 
-    <!-- Dritte Reihe -->
-    <div class="motd-box">
-      <h2>🔗 Links</h2>
-      <ul>
-        <li><a href="#">Steam Gruppe</a></li>
-        <li><a href="#">Discord</a></li>
-        <li><a href="#">Forum</a></li>
-      </ul>
-    </div>
-    <div class="motd-box">
-      <h2>📌 Platzhalter 1</h2>
-      <p>Hier kannst du später Infos einfügen.</p>
-    </div>
-    <div class="motd-box">
-      <h2>📌 Platzhalter 2</h2>
-      <p>Hier kannst du später Infos einfügen.</p>
+  <!-- Container -->
+  <div class="container">
+    <h1 class="title">Willkommen auf dem Server!</h1>
+
+    <!-- 3x3 Grid -->
+    <div class="grid">
+      <!-- Reihe 1 -->
+      <div class="box">
+        <h2>Team</h2>
+        <ul class="team-list fade-in"></ul>
+      </div>
+      <div class="box">
+        <h2>News</h2>
+        <ul>
+          <li>Bald verfügbar...</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Events</h2>
+        <ul>
+          <li>Bald verfügbar...</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- Reihe 2 -->
+      <div class="box">
+        <h2>Regeln</h2>
+        <ul class="rules-list">
+        <li>1. Random Deathmatch & Random Damage ist verboten</li>
+        <li>2. Teaming & Ghosting ist verboten</li>
+        <li>3. Voice & Chat Spam ist verboten (Auch keine Soundboards)</li>
+        <li>4. Bitte aussprechbare Namen nutzen (Unser Team kann euch auch gerne ein Nickname setzten)</li>
+        <li>5. Keine Beleidigende, Rassistische, FSK18 oder diskriminierende Namen, Sprays oder Avatare</li>
+        <li>6. Das Beleidigen sowie Provozieren von Spielern ist verboten</li>
+        <li>7. Jegliche Art von Drittprogrammen, die das Spielerlebnis verändern sind verboten</li>
+        <li>8. Das Verursachen von Damage mit Props ist verboten</li>
+        <li>9. Bugusing ist in jeglicher Form verboten</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Informationen</h2>
+        <ul>
+          <li>Bald verfügbar...</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Updates</h2>
+        <ul>
+          <li>Bald verfügbar...</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- Reihe 3 -->
+      <div class="box">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="https://discord.gg/NcaRsM7MHP">Discord</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Bewerben</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Platzhalter 1</h2>
+        <p>Bald verfügbar...</p>
+      </div>
+      <div class="box">
+        <h2>Bald verfügbar...</h2>
+        <p>Bald verfügbar...</p>
+      </div>
     </div>
   </div>
 
-  <!-- JavaScript für Team Animation -->
-  <script>
-    const teamMembers = [
-      { role: "Owner", name: "[R.U]Yu" },
-      { role: "HeadAdmin", name: "[R.U]Kariko" },
-      { role: "HeadAdmin", name: "[R.U]Luna" },
-      { role: "Admin", name: "[R.U]Max" },
-      { role: "Moderator", name: "[R.U]Sky" },
-      { role: "Supporter", name: "[R.U]Mia" },
-      { role: "Supporter", name: "[R.U]Niko" }
-    ];
-
-    const teamList = document.getElementById("team-list");
-    let currentIndex = 0;
-    const chunkSize = 3;
-    const interval = 4000; // 4 Sekunden pro Animation
-
-    function renderTeam() {
-      teamList.classList.add("fade-out");
-
-      setTimeout(() => {
-        teamList.innerHTML = "";
-        const chunk = teamMembers.slice(currentIndex, currentIndex + chunkSize);
-        chunk.forEach(member => {
-          const li = document.createElement("li");
-          li.innerHTML = `<span>${member.role}</span><span>${member.name}</span>`;
-          teamList.appendChild(li);
-        });
-
-        teamList.classList.remove("fade-out");
-        teamList.classList.add("fade-in");
-
-        currentIndex += chunkSize;
-        if (currentIndex >= teamMembers.length) currentIndex = 0;
-      }, 500);
-    }
-
-    setInterval(renderTeam, interval);
-    renderTeam();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
