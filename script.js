@@ -20,7 +20,8 @@ const rules = [
   "6. Das Beleidigen sowie Provozieren von Spielern ist verboten",
   "7. Jegliche Art von Drittprogrammen, die das Spielerlebnis verändern sind verboten",
   "8. Das Verursachen von Damage mit Props ist verboten",
-  "9. Bugusing ist in jeglicher Form verboten"
+  "9. Bugusing ist in jeglicher Form verboten",
+  "10. Gebiets Claiming & Body Blocken ist verboten"
 ];
 
 /* DOM-Elemente */
