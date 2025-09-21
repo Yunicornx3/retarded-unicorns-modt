@@ -12,7 +12,7 @@ const teamMembers = [
 ];
 
 const rules = [
-  "1. Random Deathmatch & Random Damage ist verboten",
+  "1. Random Deathmatch (RDM), Random Damage & Random KOS ist verboten",
   "2. Teaming & Ghosting ist verboten",
   "3. Voice & Chat Spam ist verboten (Auch keine Soundboards)",
   "4. Bitte aussprechbare Namen nutzen (Unser Team kann euch auch gerne ein Nickname setzten)",
