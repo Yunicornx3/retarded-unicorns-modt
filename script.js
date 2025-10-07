@@ -21,7 +21,8 @@ const rules = [
   "7. Jegliche Art von Drittprogrammen, die das Spielerlebnis verändern sind verboten",
   "8. Das Verursachen von Damage mit Props ist verboten",
   "9. Bugusing ist in jeglicher Form verboten",
-  "10. Gebiets Claiming & Body Blocken ist verboten"
+  "10. Gebiets Claiming & Body Blocken ist verboten",
+   "11. Werbung jeglicher Form ist verboten"
 ];
 
 /* DOM-Elemente */
